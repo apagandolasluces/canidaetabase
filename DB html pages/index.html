@@ -43,8 +43,14 @@
                 <a class="simple-text">
                     Canidaetabase
                 </a>
-            </div>
-
+            </div><CENTER>
+            <p>
+            	Team Members:<br/>
+            	Phillip Rognerud<br/>
+				Nicholas Lacroix<br/>
+				Tyler Laskey<br/>
+				Jeff Shin<br/>
+            </p></CENTER>
     	</div>
     </div>
 
@@ -91,9 +97,59 @@
                                     <button type="submit" class="btn btn-info btn-fill pull-right">Search</button>
                                     <div class="clearfix"></div>
                                 </form>
+                                <div>
+                                	<p>*Locations search includes Vet, Breed, Breeder, and Owner locations.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-md-8" style="padding-left: 25%;">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Select an SQL Query</h4>
+                            </div>
+                            <div class="content">
+                                    <div class="row">
+                                    	<p><center>
+                                    		<a href="" id="query1">Query1:</a><br/>
+                                    		<a href="" id="query2">Query2:</a><br/>
+                                    		<a href="" id="query3">Query3:</a><br/>
+                                    		<a href="" id="query4">Query4:</a><br/>
+                                    		<a href="" id="query5">Query5:</a><br/>
+                                    	</center>
+                                    	</p>
+                                    <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="col-md-8" style="padding-left: 25%;">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Enter your query here</h4>
+                            </div>
+                            <div class="content">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-4" style="width: 100%;">
+                                            <div class="form-group">
+                                                <label for="searchInput"></label>
+                                                <input type="search" class="form-control" placeholder="Enter your own SQL query to perform a search">
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                    <button type="submit" id="query" class="btn btn-info btn-fill pull-left">Search</button>
+                                    <button type="reset" class="btn btn-info btn-fill pull-right" style="padding-left: 15px;" onclick="clearQuery()">Clear</button>
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </div>
@@ -134,5 +190,11 @@
     <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
 	<script src="assets/js/light-bootstrap-dashboard.js"></script>
 
+	<script type="text/javascript">
+    	function clearQuery()
+    	{
+        	document.getElementByID('query').value="";
+        };
+	</script>
 
 </html>
