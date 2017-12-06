@@ -38,6 +38,8 @@
 
     -->
 
+
+
     	<div class="sidebar-wrapper">
             <div class="logo">
                 <a class="simple-text">
@@ -67,44 +69,33 @@
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
-                	<div class="col-md-8" style="padding-left: 25%;">
+                	<div class="col-md-8" style="width: 25%;">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Search Bar</h4>
+                                <h4 class="title">Search Specific Data</h4>
                             </div>
                             <div class="content">
-                                <form>
-                                    <div class="row">
-                                        <div class="col-md-4" style="width: 100%;">
-                                            <div class="form-group">
-                                                <label for="searchInput"></label>
-                                                <input type="search" class="form-control" placeholder="Enter a search for breeds, owners, vets, breeders, or locations">
-                                            </div>
-                                        </div>
-                                    </div>
+                            
                                    
-                                     <div class="form-group">
+                                     <div>
                                      	<center>
-                                                <label for="searchInput">Search In:</label>
-                                                <input type="Checkbox" id="all"><a>All</a></input>
-                                                <input type="Checkbox" id="breed"><a>Breed</a></input>
-                                                <input type="Checkbox" id="owner"><a>Owners</a></input>
-                                                <input type="Checkbox" id="vet"><a>Vets</a></input>
-                                                <input type="Checkbox" id="breeder"><a>Breeders</a></input>
-                                                <input type="Checkbox" id="location"><a>Locations</a></input>
+                                                <a href="all.html">All</a><br/>
+                                                <a href="breed.html">Breed</a><br/>
+                                                <a href="owners.html">Owners</a><br/>
+                                                <a href="vets.html">Vets</a><br/>
+                                                <a href="breeders.html">Breeders</a><br/>
+                                                <a href="locations.html">Locations</a>
                                         </center>
                                      </div>
-                                    <button type="submit" class="btn btn-info btn-fill pull-right">Search</button>
+                        
                                     <div class="clearfix"></div>
-                                </form>
-                                <div>
-                                	<p>*Locations search includes Vet, Breed, Breeder, and Owner locations.</p>
-                                </div>
+                             
+                           
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-8" style="padding-left: 25%;">
+                    <div class="col-md-8" style="width: 25%;">
                         <div class="card">
                             <div class="header">
                                 <h4 class="title">Select an SQL Query</h4>
@@ -112,11 +103,16 @@
                             <div class="content">
                                     <div class="row">
                                     	<p><center>
-                                    		<a href="" id="query1">Query1:</a><br/>
-                                    		<a href="" id="query2">Query2:</a><br/>
-                                    		<a href="" id="query3">Query3:</a><br/>
-                                    		<a href="" id="query4">Query4:</a><br/>
-                                    		<a href="" id="query5">Query5:</a><br/>
+                                    		<a href="" id="query1">Query1:</a>
+                                    		<php?>query 1 script here</php?><br/>
+                                    		<a href="" id="query2">Query2:</a>
+                                    		<php?>query 2 script here</php?><br/>
+                                    		<a href="" id="query3">Query3:</a>
+                                    		<php?>query 3 script here</php?><br/>
+                                    		<a href="" id="query4">Query4:</a>
+                                    		<php?>query 4 script here</php?><br/>
+                                    		<a href="" id="query5">Query5:</a>
+                                    		<php?>query 5 script here</php?><br/>
                                     	</center>
                                     	</p>
                                     <div class="clearfix"></div>
@@ -125,7 +121,7 @@
                     </div>
                 </div>
 
-                    <div class="col-md-8" style="padding-left: 25%;">
+                    <div class="col-md-8" style="width: 25%;">
                         <div class="card">
                             <div class="header">
                                 <h4 class="title">Enter your query here</h4>
@@ -142,6 +138,7 @@
                                     </div>
                                    
                                     <button type="submit" id="query" class="btn btn-info btn-fill pull-left">Search</button>
+                                    <php?>enter ad-hoc php search here</php?>
                                     <button type="reset" class="btn btn-info btn-fill pull-right" style="padding-left: 15px;" onclick="clearQuery()">Clear</button>
                                     <div class="clearfix"></div>
                                 </form>
@@ -149,7 +146,22 @@
                         </div>
                     </div>
 
-
+                            <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8" style="width: 75%;">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Search Results</h4>
+                            </div>
+                            <div class="content">
+                                <php?>post selected query table results, or adhoc search query results here</php?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
                 </div>
             </div>
         </div>
