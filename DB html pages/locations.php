@@ -51,7 +51,8 @@
                 Nicholas Lacroix<br/>
                 Tyler Laskey<br/>
                 Jeff Shin<br/>
-            </p></CENTER>
+            </p>
+            <a href="index.php">Back HomePage</a><br/></CENTER>
         
         </div>
     </div>
@@ -60,7 +61,7 @@
         <nav class="navbar navbar-default navbar-fixed">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand pull-left" href="index.html"><b>Home</b></a>
+                    <a class="navbar-brand pull-left" href="index.php"><b>Home</b></a>
                     <a class="navbar-brand">A database for all Canid lovers</a>
                 </div>
             </div>
@@ -72,7 +73,7 @@
                 <div class="row">
                     <div class="col-md-8" style="width: 100%;">
                         <div class="card"
-                        style=" 
+                        style="
                             height: 500px; 
                             overflow-x: scroll; 
                             overflow-y: scroll;">
@@ -80,7 +81,56 @@
                                 <h4 class="title">Search Results</h4>
                             </div>
                             <div class="content">
-                                <php?>Post vet php tables script here</php?>
+                                
+                                <?php
+$servername = "localhost:3306";
+          $username = "root";
+            $password = "root";
+            $dbname = "cs157a";
+
+            // Create connection
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            // Check connection
+            if ($conn->connect_error) {
+                echo $conn->connect_error;
+                die("Connection failed: " . $conn->connect_error);
+            } else {
+                
+                $sql = "SELECT zipcode, city, stateProvince, country FROM location";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    // output data of each row
+                    echo "<div><b>Locations: ".$result->num_rows." result(s)</b></div>";
+                    echo '<table class="table table-hover table-striped table-sortable">';
+                    echo '<thead><tr>';
+                    echo '</tr></thead>';
+                    echo '<th>#</th><th>zipcode</th><th>city</th><th>stateProvince</th>';
+                    echo '<th>#</th><th>country</th>';
+                    echo '<tbody>';
+                    $count = 0;
+                    while($row = $result->fetch_assoc()) {
+                        $count++;
+                        echo '<tr>';
+                        echo "<td>". $count. "</td>";
+                        echo "<td>". $row["zipcode"]. "</td>";
+                        echo "<td>". $row["city"]. "</td>";
+                        echo "<td>". $row["stateProvince"]. "</td>";
+                        echo "<td>". $row["country"]. "</td>";                                                
+                        echo '</tr>';
+                    }    
+                    echo '</tbody>';
+                    echo '</table>';
+                } else {
+                    echo "0 results";
+                }
+
+
+            }
+
+            $conn->close();
+
+            // ======= end of php =======
+            ?>
                             </div>
                         </div>
                     </div>
